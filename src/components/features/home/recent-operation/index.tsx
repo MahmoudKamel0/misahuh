@@ -1,8 +1,9 @@
 import { Heading } from "@components/ui/heading";
 import { View } from "react-native";
-import ProjectsRecentSection from "./components/project.home";
 import { Link } from "expo-router";
 import { Text } from "@components/ui/text";
+
+import ProjectsRecentSection from "./components/project.home";
 
 export default function RecentOperationSection() {
     return (

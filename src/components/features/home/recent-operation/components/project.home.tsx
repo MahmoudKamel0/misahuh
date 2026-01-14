@@ -18,7 +18,7 @@ export default function ProjectsRecentSection() {
                 height={405}
                 snapEnabled={true}
                 pagingEnabled={true}
-                style={{backgroundColor: "red"}}
+                style={{ backgroundColor: "red" }}
                 data={data}
                 onProgressChange={progress}
                 renderItem={({ index }) => (

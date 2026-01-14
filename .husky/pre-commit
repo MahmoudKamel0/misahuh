@@ -1,1 +1,11 @@
-yarn test
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# run command prettier for format code pre commit
+echo "----------------------------------------"
+echo "# Running Prettier to format your code..."
+echo "----------------------------------------"
+yarn exec prettier . --write
+
+# run command lint for check quality code code pre commit
+yarn run lint

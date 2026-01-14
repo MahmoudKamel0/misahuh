@@ -4,7 +4,7 @@ import { useColorScheme } from "nativewind";
 import RootProviders from "@components/providers";
 
 export default function RootLayout() {
-    const { colorScheme, setColorScheme } = useColorScheme();
+    const { colorScheme } = useColorScheme();
 
     return (
         <RootProviders>
