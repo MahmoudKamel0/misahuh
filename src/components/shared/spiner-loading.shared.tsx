@@ -1,16 +1,12 @@
 import Svg, { Circle } from "react-native-svg";
 
 type Props = {
-  progress: number; // من 0 لحد 1
-  size?: number;
-  color?: string;
+    progress: number; // من 0 لحد 1
+    size?: number;
+    color?: string;
 };
 
-export default function SpinnerLoading({
-    progress,
-    size = 36,
-    color = "#3b82f6",
-}: Props) {
+export default function SpinnerLoading({ progress, size = 36, color = "#3b82f6" }: Props) {
     const radius = 18;
     const circumference = 2 * Math.PI * radius;
 

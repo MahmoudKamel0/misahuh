@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React, { forwardRef, memo } from "react";
 import { H1, H2, H3, H4, H5, H6 } from "@expo/html-elements";
 import type { VariantProps } from "@gluestack-ui/utils/nativewind-utils";
@@ -6,9 +7,9 @@ import { cssInterop } from "nativewind";
 import { headingStyle } from "./styles";
 
 type IHeadingProps = VariantProps<typeof headingStyle> &
-  React.ComponentPropsWithoutRef<typeof H1> & {
-    as?: React.ElementType;
-  };
+    React.ComponentPropsWithoutRef<typeof H1> & {
+        as?: React.ElementType;
+    };
 
 cssInterop(H1, { className: "style" });
 cssInterop(H2, { className: "style" });
@@ -18,23 +19,11 @@ cssInterop(H5, { className: "style" });
 cssInterop(H6, { className: "style" });
 
 const MappedHeading = memo(
-    forwardRef<React.ComponentRef<typeof H1>, IHeadingProps>(
-        function MappedHeading(
-            {
-                size,
-                className,
-                isTruncated,
-                bold,
-                underline,
-                strikeThrough,
-                sub,
-                italic,
-                highlight,
-                ...props
-            },
-            ref,
-        ) {
-            switch (size) {
+    forwardRef<React.ComponentRef<typeof H1>, IHeadingProps>(function MappedHeading(
+        { size, className, isTruncated, bold, underline, strikeThrough, sub, italic, highlight, ...props },
+        ref,
+    ) {
+        switch (size) {
             case "5xl":
             case "4xl":
             case "3xl":
@@ -171,25 +160,13 @@ const MappedHeading = memo(
                         ref={ref}
                     />
                 );
-            }
-        },
-    ),
+        }
+    }),
 );
 
 const Heading = memo(
-    forwardRef<React.ComponentRef<typeof H1>, IHeadingProps>(function Heading(
-        { className, size = "lg", as: AsComp, ...props },
-        ref,
-    ) {
-        const {
-            isTruncated,
-            bold,
-            underline,
-            strikeThrough,
-            sub,
-            italic,
-            highlight,
-        } = props;
+    forwardRef<React.ComponentRef<typeof H1>, IHeadingProps>(function Heading({ className, size = "lg", as: AsComp, ...props }, ref) {
+        const { isTruncated, bold, underline, strikeThrough, sub, italic, highlight } = props;
 
         if (AsComp) {
             return (
@@ -210,9 +187,7 @@ const Heading = memo(
             );
         }
 
-        return (
-            <MappedHeading className={className} size={size} ref={ref} {...props} />
-        );
+        return <MappedHeading className={className} size={size} ref={ref} {...props} />;
     }),
 );
 

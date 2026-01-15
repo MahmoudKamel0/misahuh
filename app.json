@@ -1,49 +1,49 @@
 {
-  "expo": {
-    "name": "misahuh",
-    "slug": "misahuh",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./public/images/global/cover-logo.png",
-    "scheme": "misahuh",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./public/images/global/cover-logo.png",
-        "backgroundImage": "./public/images/global/cover-logo.png",
-        "monochromeImage": "./public/images/global/cover-logo.png"
-      },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
-    },
-    "web": {
-      "output": "static",
-      "favicon": "./public/images/global/cover-logo.png",
-      "bundler": "metro"
-    },
-    "plugins": [
-      "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./public/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff",
-          "dark": {
-            "backgroundColor": "#000000"
-          }
+    "expo": {
+        "name": "misahuh",
+        "slug": "misahuh",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./public/images/global/cover-logo.png",
+        "scheme": "misahuh",
+        "userInterfaceStyle": "automatic",
+        "newArchEnabled": true,
+        "ios": {
+            "supportsTablet": true
+        },
+        "android": {
+            "adaptiveIcon": {
+                "backgroundColor": "#E6F4FE",
+                "foregroundImage": "./public/images/global/cover-logo.png",
+                "backgroundImage": "./public/images/global/cover-logo.png",
+                "monochromeImage": "./public/images/global/cover-logo.png"
+            },
+            "edgeToEdgeEnabled": true,
+            "predictiveBackGestureEnabled": false
+        },
+        "web": {
+            "output": "static",
+            "favicon": "./public/images/global/cover-logo.png",
+            "bundler": "metro"
+        },
+        "plugins": [
+            "expo-router",
+            [
+                "expo-splash-screen",
+                {
+                    "image": "./public/images/splash-icon.png",
+                    "imageWidth": 200,
+                    "resizeMode": "contain",
+                    "backgroundColor": "#ffffff",
+                    "dark": {
+                        "backgroundColor": "#000000"
+                    }
+                }
+            ]
+        ],
+        "experiments": {
+            "typedRoutes": true,
+            "reactCompiler": true
         }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
     }
-  }
 }

@@ -2,10 +2,7 @@
 import React from "react";
 import { createInput } from "@gluestack-ui/core/input/creator";
 import { View, Pressable, TextInput } from "react-native";
-import { tva ,
-    withStyleContext,
-    useStyleContext,
-} from "@gluestack-ui/utils/nativewind-utils";
+import { tva, withStyleContext, useStyleContext } from "@gluestack-ui/utils/nativewind-utils";
 import { cssInterop } from "nativewind";
 import type { VariantProps } from "@gluestack-ui/utils/nativewind-utils";
 import { PrimitiveIcon, UIIcon } from "@gluestack-ui/core/icon/creator";
@@ -45,13 +42,13 @@ const inputStyle = tva({
 
         variant: {
             underlined:
-        "rounded-none border-b data-[invalid=true]:border-b-2 data-[invalid=true]:border-error-700 data-[invalid=true]:hover:border-error-700 data-[invalid=true]:data-[focus=true]:border-error-700 data-[invalid=true]:data-[focus=true]:hover:border-error-700 data-[invalid=true]:data-[disabled=true]:hover:border-error-700",
+                "rounded-none border-b data-[invalid=true]:border-b-2 data-[invalid=true]:border-error-700 data-[invalid=true]:hover:border-error-700 data-[invalid=true]:data-[focus=true]:border-error-700 data-[invalid=true]:data-[focus=true]:hover:border-error-700 data-[invalid=true]:data-[disabled=true]:hover:border-error-700",
 
             outline:
-        "rounded border data-[invalid=true]:border-error-700 data-[invalid=true]:hover:border-error-700 data-[invalid=true]:data-[focus=true]:border-error-700 data-[invalid=true]:data-[focus=true]:hover:border-error-700 data-[invalid=true]:data-[disabled=true]:hover:border-error-700 data-[focus=true]:web:ring-1 data-[focus=true]:web:ring-inset data-[focus=true]:web:ring-indicator-primary data-[invalid=true]:web:ring-1 data-[invalid=true]:web:ring-inset data-[invalid=true]:web:ring-indicator-error data-[invalid=true]:data-[focus=true]:hover:web:ring-1 data-[invalid=true]:data-[focus=true]:hover:web:ring-inset data-[invalid=true]:data-[focus=true]:hover:web:ring-indicator-error data-[invalid=true]:data-[disabled=true]:hover:web:ring-1 data-[invalid=true]:data-[disabled=true]:hover:web:ring-inset data-[invalid=true]:data-[disabled=true]:hover:web:ring-indicator-error",
+                "rounded border data-[invalid=true]:border-error-700 data-[invalid=true]:hover:border-error-700 data-[invalid=true]:data-[focus=true]:border-error-700 data-[invalid=true]:data-[focus=true]:hover:border-error-700 data-[invalid=true]:data-[disabled=true]:hover:border-error-700 data-[focus=true]:web:ring-1 data-[focus=true]:web:ring-inset data-[focus=true]:web:ring-indicator-primary data-[invalid=true]:web:ring-1 data-[invalid=true]:web:ring-inset data-[invalid=true]:web:ring-indicator-error data-[invalid=true]:data-[focus=true]:hover:web:ring-1 data-[invalid=true]:data-[focus=true]:hover:web:ring-inset data-[invalid=true]:data-[focus=true]:hover:web:ring-indicator-error data-[invalid=true]:data-[disabled=true]:hover:web:ring-1 data-[invalid=true]:data-[disabled=true]:hover:web:ring-inset data-[invalid=true]:data-[disabled=true]:hover:web:ring-indicator-error",
 
             rounded:
-        "rounded-full border data-[invalid=true]:border-error-700 data-[invalid=true]:hover:border-error-700 data-[invalid=true]:data-[focus=true]:border-error-700 data-[invalid=true]:data-[focus=true]:hover:border-error-700 data-[invalid=true]:data-[disabled=true]:hover:border-error-700 data-[focus=true]:web:ring-1 data-[focus=true]:web:ring-inset data-[focus=true]:web:ring-indicator-primary data-[invalid=true]:web:ring-1 data-[invalid=true]:web:ring-inset data-[invalid=true]:web:ring-indicator-error data-[invalid=true]:data-[focus=true]:hover:web:ring-1 data-[invalid=true]:data-[focus=true]:hover:web:ring-inset data-[invalid=true]:data-[focus=true]:hover:web:ring-indicator-error data-[invalid=true]:data-[disabled=true]:hover:web:ring-1 data-[invalid=true]:data-[disabled=true]:hover:web:ring-inset data-[invalid=true]:data-[disabled=true]:hover:web:ring-indicator-error",
+                "rounded-full border data-[invalid=true]:border-error-700 data-[invalid=true]:hover:border-error-700 data-[invalid=true]:data-[focus=true]:border-error-700 data-[invalid=true]:data-[focus=true]:hover:border-error-700 data-[invalid=true]:data-[disabled=true]:hover:border-error-700 data-[focus=true]:web:ring-1 data-[focus=true]:web:ring-inset data-[focus=true]:web:ring-indicator-primary data-[invalid=true]:web:ring-1 data-[invalid=true]:web:ring-inset data-[invalid=true]:web:ring-indicator-error data-[invalid=true]:data-[focus=true]:hover:web:ring-1 data-[invalid=true]:data-[focus=true]:hover:web:ring-inset data-[invalid=true]:data-[focus=true]:hover:web:ring-indicator-error data-[invalid=true]:data-[disabled=true]:hover:web:ring-1 data-[invalid=true]:data-[disabled=true]:hover:web:ring-inset data-[invalid=true]:data-[disabled=true]:hover:web:ring-indicator-error",
         },
     },
 });
@@ -100,57 +97,31 @@ const inputFieldStyle = tva({
     },
 });
 
-type IInputProps = React.ComponentProps<typeof UIInput> &
-  VariantProps<typeof inputStyle> & { className?: string };
-const Input = React.forwardRef<React.ComponentRef<typeof UIInput>, IInputProps>(
-    function Input(
-        { className, variant = "outline", size = "md", ...props },
-        ref,
-    ) {
-        return (
-            <UIInput
-                ref={ref}
-                {...props}
-                className={inputStyle({ variant, size, class: className })}
-                context={{ variant, size }}
-            />
-        );
-    },
-);
+type IInputProps = React.ComponentProps<typeof UIInput> & VariantProps<typeof inputStyle> & { className?: string };
+const Input = React.forwardRef<React.ComponentRef<typeof UIInput>, IInputProps>(function Input(
+    { className, variant = "outline", size = "md", ...props },
+    ref,
+) {
+    return <UIInput ref={ref} {...props} className={inputStyle({ variant, size, class: className })} context={{ variant, size }} />;
+});
 
 type IInputIconProps = React.ComponentProps<typeof UIInput.Icon> &
-  VariantProps<typeof inputIconStyle> & {
-    className?: string;
-    height?: number;
-    width?: number;
-  };
+    VariantProps<typeof inputIconStyle> & {
+        className?: string;
+        height?: number;
+        width?: number;
+    };
 
-const InputIcon = React.forwardRef<
-  React.ComponentRef<typeof UIInput.Icon>,
-  IInputIconProps
->(function InputIcon({ className, size, ...props }, ref) {
+const InputIcon = React.forwardRef<React.ComponentRef<typeof UIInput.Icon>, IInputIconProps>(function InputIcon(
+    { className, size, ...props },
+    ref,
+) {
     const { size: parentSize } = useStyleContext(SCOPE);
 
     if (typeof size === "number") {
-        return (
-            <UIInput.Icon
-                ref={ref}
-                {...props}
-                className={inputIconStyle({ class: className })}
-                size={size}
-            />
-        );
-    } else if (
-        (props.height !== undefined || props.width !== undefined) &&
-    size === undefined
-    ) {
-        return (
-            <UIInput.Icon
-                ref={ref}
-                {...props}
-                className={inputIconStyle({ class: className })}
-            />
-        );
+        return <UIInput.Icon ref={ref} {...props} className={inputIconStyle({ class: className })} size={size} />;
+    } else if ((props.height !== undefined || props.width !== undefined) && size === undefined) {
+        return <UIInput.Icon ref={ref} {...props} className={inputIconStyle({ class: className })} />;
     }
     return (
         <UIInput.Icon
@@ -166,13 +137,12 @@ const InputIcon = React.forwardRef<
     );
 });
 
-type IInputSlotProps = React.ComponentProps<typeof UIInput.Slot> &
-  VariantProps<typeof inputSlotStyle> & { className?: string };
+type IInputSlotProps = React.ComponentProps<typeof UIInput.Slot> & VariantProps<typeof inputSlotStyle> & { className?: string };
 
-const InputSlot = React.forwardRef<
-  React.ComponentRef<typeof UIInput.Slot>,
-  IInputSlotProps
->(function InputSlot({ className, ...props }, ref) {
+const InputSlot = React.forwardRef<React.ComponentRef<typeof UIInput.Slot>, IInputSlotProps>(function InputSlot(
+    { className, ...props },
+    ref,
+) {
     return (
         <UIInput.Slot
             ref={ref}
@@ -184,13 +154,12 @@ const InputSlot = React.forwardRef<
     );
 });
 
-type IInputFieldProps = React.ComponentProps<typeof UIInput.Input> &
-  VariantProps<typeof inputFieldStyle> & { className?: string };
+type IInputFieldProps = React.ComponentProps<typeof UIInput.Input> & VariantProps<typeof inputFieldStyle> & { className?: string };
 
-const InputField = React.forwardRef<
-  React.ComponentRef<typeof UIInput.Input>,
-  IInputFieldProps
->(function InputField({ className, ...props }, ref) {
+const InputField = React.forwardRef<React.ComponentRef<typeof UIInput.Input>, IInputFieldProps>(function InputField(
+    { className, ...props },
+    ref,
+) {
     const { variant: parentVariant, size: parentSize } = useStyleContext(SCOPE);
 
     return (

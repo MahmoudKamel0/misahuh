@@ -2,10 +2,7 @@
 import React from "react";
 import { createProgress } from "@gluestack-ui/core/progress/creator";
 import { View } from "react-native";
-import { tva ,
-    withStyleContext,
-    useStyleContext,
-} from "@gluestack-ui/utils/nativewind-utils";
+import { tva, withStyleContext, useStyleContext } from "@gluestack-ui/utils/nativewind-utils";
 import { cssInterop } from "nativewind";
 import type { VariantProps } from "@gluestack-ui/utils/nativewind-utils";
 
@@ -120,15 +117,10 @@ const progressFilledTrackStyle = tva({
     ],
 });
 
-type IProgressProps = VariantProps<typeof progressStyle> &
-  React.ComponentProps<typeof UIProgress>;
-type IProgressFilledTrackProps = VariantProps<typeof progressFilledTrackStyle> &
-  React.ComponentProps<typeof UIProgress.FilledTrack>;
+type IProgressProps = VariantProps<typeof progressStyle> & React.ComponentProps<typeof UIProgress>;
+type IProgressFilledTrackProps = VariantProps<typeof progressFilledTrackStyle> & React.ComponentProps<typeof UIProgress.FilledTrack>;
 
-const Progress = React.forwardRef<
-  React.ComponentRef<typeof UIProgress>,
-  IProgressProps
->(function Progress(
+const Progress = React.forwardRef<React.ComponentRef<typeof UIProgress>, IProgressProps>(function Progress(
     { className, size = "md", orientation = "horizontal", ...props },
     ref,
 ) {
@@ -143,26 +135,24 @@ const Progress = React.forwardRef<
     );
 });
 
-const ProgressFilledTrack = React.forwardRef<
-  React.ComponentRef<typeof UIProgress.FilledTrack>,
-  IProgressFilledTrackProps
->(function ProgressFilledTrack({ className, ...props }, ref) {
-    const { size: parentSize, orientation: parentOrientation } =
-    useStyleContext(SCOPE);
+const ProgressFilledTrack = React.forwardRef<React.ComponentRef<typeof UIProgress.FilledTrack>, IProgressFilledTrackProps>(
+    function ProgressFilledTrack({ className, ...props }, ref) {
+        const { size: parentSize, orientation: parentOrientation } = useStyleContext(SCOPE);
 
-    return (
-        <UIProgress.FilledTrack
-            ref={ref}
-            className={progressFilledTrackStyle({
-                parentVariants: {
-                    size: parentSize,
-                    orientation: parentOrientation,
-                },
-                class: className,
-            })}
-            {...props}
-        />
-    );
-});
+        return (
+            <UIProgress.FilledTrack
+                ref={ref}
+                className={progressFilledTrackStyle({
+                    parentVariants: {
+                        size: parentSize,
+                        orientation: parentOrientation,
+                    },
+                    class: className,
+                })}
+                {...props}
+            />
+        );
+    },
+);
 
 export { Progress, ProgressFilledTrack };

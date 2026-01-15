@@ -5,32 +5,21 @@ import { Animated, Easing, Platform, View } from "react-native";
 import { skeletonStyle, skeletonTextStyle } from "./styles";
 
 type ISkeletonProps = React.ComponentProps<typeof View> &
-  VariantProps<typeof skeletonStyle> & {
-    isLoaded?: boolean;
-    startColor?: string;
-    speed?: number | string;
-  };
+    VariantProps<typeof skeletonStyle> & {
+        isLoaded?: boolean;
+        startColor?: string;
+        speed?: number | string;
+    };
 
 type ISkeletonTextProps = React.ComponentProps<typeof View> &
-  VariantProps<typeof skeletonTextStyle> & {
-    _lines?: number;
-    isLoaded?: boolean;
-    startColor?: string;
-  };
+    VariantProps<typeof skeletonTextStyle> & {
+        _lines?: number;
+        isLoaded?: boolean;
+        startColor?: string;
+    };
 
-const Skeleton = forwardRef<
-  React.ComponentRef<typeof Animated.View>,
-  ISkeletonProps
->(function Skeleton(
-    {
-        className,
-        variant,
-        children,
-        startColor = "bg-background-200",
-        isLoaded = false,
-        speed = 2,
-        ...props
-    },
+const Skeleton = forwardRef<React.ComponentRef<typeof Animated.View>, ISkeletonProps>(function Skeleton(
+    { className, variant, children, startColor = "bg-background-200", isLoaded = false, speed = 2, ...props },
     ref,
 ) {
     const pulseAnim = new Animated.Value(1);
@@ -79,19 +68,8 @@ const Skeleton = forwardRef<
     }
 });
 
-const SkeletonText = forwardRef<
-  React.ComponentRef<typeof View>,
-  ISkeletonTextProps
->(function SkeletonText(
-    {
-        className,
-        _lines,
-        isLoaded = false,
-        startColor = "bg-background-200",
-        gap = 2,
-        children,
-        ...props
-    },
+const SkeletonText = forwardRef<React.ComponentRef<typeof View>, ISkeletonTextProps>(function SkeletonText(
+    { className, _lines, isLoaded = false, startColor = "bg-background-200", gap = 2, children, ...props },
     ref,
 ) {
     if (!isLoaded) {

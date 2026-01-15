@@ -6,7 +6,7 @@ import { IRootProviderProps } from "@lib/types/providers";
 
 export default function RootProviders({ children }: Readonly<IRootProviderProps>) {
     const { colorScheme } = useColorScheme();
-    
+
     return (
         <SafeAreaProvider>
             <GluestackUIProvider mode="light">

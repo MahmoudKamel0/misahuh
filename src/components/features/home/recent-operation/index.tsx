@@ -11,7 +11,7 @@ export default function RecentOperationSection() {
             <View className="flex-row items-center justify-between">
                 <Heading className="text-2xl">Recent Operation</Heading>
                 <Link href="/test-page">
-                    <Text className="underline text-[#888]">View all</Text>
+                    <Text className="text-[#888] underline">View all</Text>
                 </Link>
             </View>
             <ProjectsRecentSection />

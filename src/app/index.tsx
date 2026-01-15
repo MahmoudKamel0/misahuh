@@ -4,7 +4,7 @@ import SearchBar from "@components/shared/search-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 import HeaderLayout from "@components/layouts/header";
 import { useCallback, useState } from "react";
-import { RefreshControl, ScrollView } from "react-native"; 
+import { RefreshControl, ScrollView } from "react-native";
 
 export default function HomeScreen() {
     const [refreshing, setRefreshing] = useState(false);

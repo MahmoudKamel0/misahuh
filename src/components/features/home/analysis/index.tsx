@@ -11,7 +11,7 @@ export default function AnalysisSection() {
     const progress = useSharedValue<number>(0);
 
     return (
-        <View className="flex-1 mt-9">
+        <View className="mt-9 flex-1">
             <Carousel
                 ref={ref}
                 width={width}
@@ -20,7 +20,7 @@ export default function AnalysisSection() {
                 // style={{ backgroundColor: "red" }}
                 onProgressChange={progress}
                 renderItem={({ index }) => (
-                    <View className="flex-1 justify-center bg-zinc-200 rounded-2xl" style={{ width: width / 2 }}>
+                    <View className="flex-1 justify-center rounded-2xl bg-zinc-200" style={{ width: width / 2 }}>
                         <Text style={{ textAlign: "center", fontSize: 30 }}>{index}</Text>
                     </View>
                 )}

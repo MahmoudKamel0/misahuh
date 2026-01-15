@@ -2,7 +2,7 @@
 import React from "react";
 import { createTextarea } from "@gluestack-ui/core/textarea/creator";
 import { View, TextInput } from "react-native";
-import { tva , withStyleContext, useStyleContext } from "@gluestack-ui/utils/nativewind-utils";
+import { tva, withStyleContext, useStyleContext } from "@gluestack-ui/utils/nativewind-utils";
 import type { VariantProps } from "@gluestack-ui/utils/nativewind-utils";
 
 const SCOPE = "TEXTAREA";
